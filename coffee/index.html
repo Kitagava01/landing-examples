@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кофейня «Зерно» — кофе своей обжарки и выпечка</title>
+  <meta name="description" content="Кофе своей обжарки, домашняя выпечка и завтраки весь день. Заказ навынос без очереди.">
+  <meta property="og:title" content="Кофейня «Зерно»">
+  <meta property="og:description" content="Кофе своей обжарки и выпечка каждый день.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/base.css">
+  <style>
+    :root {
+      --bg: #fbf6ef; --header-bg: #fbf6efee; --card: #ffffff; --text: #2b1d14; --muted: #7a6656;
+      --line: #eadfce; --accent: #6b3e26; --on-accent: #fff; --radius: 18px;
+      --font-head: "Playfair Display", serif; --font-body: "Nunito Sans", sans-serif;
+    }
+    .hero .container { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); }
+    .cup { aspect-ratio: 1; border-radius: 50%; position: relative;
+      background: radial-gradient(circle at 50% 50%, #c99a6b 0 34%, #7a4a2c 35% 47%, #fff 48% 62%, #eadfce 63%); box-shadow: 0 40px 80px #6b3e2633; }
+    .cup::after { content: ""; position: absolute; inset: 41%; border-radius: 50%; border: 4px solid #fff5; }
+    .menu-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px 48px; }
+    .menu-item { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .menu-item b { font-weight: 700; }
+    .menu-item small { display: block; color: var(--muted); }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .tab { padding: 10px 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); cursor: pointer; font: inherit; font-weight: 600; color: var(--text); }
+    .tab[aria-selected="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+    .feature { display: flex; gap: 16px; }
+    .feature span { flex: none; width: 48px; height: 48px; border-radius: 14px; background: #f1e3d1; display: grid; place-items: center; font: 800 20px "Playfair Display"; color: var(--accent); }
+    .order { background: var(--accent); color: #fff; border-radius: 28px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .order .lead { color: #f1e3d1; }
+    .order .btn { background: #fff; color: var(--accent); }
+    .order .form input, .order .form select { border: 0; }
+    @media (max-width: 760px) { .hero .container, .order { grid-template-columns: 1fr; } .order { padding: 28px; } .cup { width: 100%; max-width: 280px; margin: 0 auto; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="#top">Зерно</a>
+      <button class="menu-toggle" data-menu-toggle aria-controls="nav" aria-expanded="false">Меню</button>
+      <nav class="nav" id="nav">
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#order">Заказ навынос</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <p class="muted">Кофейня у дома · открыто с 8:00</p>
+          <h1>Кофе, ради которого стоит проснуться пораньше</h1>
+          <p class="lead">Обжариваем зерно сами каждую неделю, печём круассаны с утра и готовим завтраки весь день.</p>
+          <a class="btn" href="#menu">Посмотреть меню</a>
+        </div>
+        <div class="cup" role="img" aria-label="Чашка капучино, вид сверху"></div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <h2>Меню</h2>
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-tab="coffee">Кофе</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="bakery">Выпечка</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="breakfast">Завтраки</button>
+        </div>
+        <div class="menu-list" data-panel="coffee">
+          <div class="menu-item"><div><b>Эспрессо</b><small>30 мл · своя обжарка</small></div><span>140 ₽</span></div>
+          <div class="menu-item"><div><b>Капучино</b><small>250 мл</small></div><span>220 ₽</span></div>
+          <div class="menu-item"><div><b>Флэт уайт</b><small>200 мл · двойной эспрессо</small></div><span>240 ₽</span></div>
+          <div class="menu-item"><div><b>Раф ванильный</b><small>300 мл</small></div><span>290 ₽</span></div>
+        </div>
+        <div class="menu-list" data-panel="bakery" hidden>
+          <div class="menu-item"><div><b>Круассан</b><small>сливочное масло 82%</small></div><span>180 ₽</span></div>
+          <div class="menu-item"><div><b>Синнабон</b><small>с корицей и сливочным кремом</small></div><span>210 ₽</span></div>
+          <div class="menu-item"><div><b>Чизкейк</b><small>нью-йорк</small></div><span>260 ₽</span></div>
+        </div>
+        <div class="menu-list" data-panel="breakfast" hidden>
+          <div class="menu-item"><div><b>Сырники</b><small>со сметаной и ягодным соусом</small></div><span>320 ₽</span></div>
+          <div class="menu-item"><div><b>Скрэмбл с тостом</b><small>и свежими овощами</small></div><span>350 ₽</span></div>
+          <div class="menu-item"><div><b>Гранола</b><small>с йогуртом и фруктами</small></div><span>290 ₽</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container grid">
+        <div class="feature"><span>1</span><div><h3>Своя обжарка</h3><p class="muted">Свежее зерно каждую неделю — вкус не теряется на складе.</p></div></div>
+        <div class="feature"><span>2</span><div><h3>Выпечка с утра</h3><p class="muted">Печём на месте, ничего не размораживаем.</p></div></div>
+        <div class="feature"><span>3</span><div><h3>Без очереди</h3><p class="muted">Оставьте заказ заранее — заберёте к нужному времени.</p></div></div>
+      </div>
+    </section>
+
+    <section id="order">
+      <div class="container">
+        <div class="order">
+          <div>
+            <h2>Закажите навынос</h2>
+            <p class="lead">Оставьте заявку — бариста приготовит напиток к вашему приходу.</p>
+          </div>
+          <form class="form" data-demo-form novalidate>
+            <input name="name" placeholder="Ваше имя" autocomplete="name">
+            <input name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel">
+            <select name="time" aria-label="Время"><option>Через 15 минут</option><option>Через 30 минут</option><option>Через час</option></select>
+            <button class="btn" type="submit">Заказать</button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="container grid">
+        <div><h3>Адрес</h3><p class="muted">пр. Условный, 5</p></div>
+        <div><h3>Часы работы</h3><p class="muted">Пн–Пт 8:00–21:00<br>Сб–Вс 9:00–22:00</p></div>
+        <div><h3>Связаться</h3><p class="muted">Телефон и Telegram появятся здесь на сайте заказчика</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© Кофейня «Зерно»</span>
+      <span class="demo-note">Учебный пример. Заведение вымышленное, сайт сделан для портфолио.</span>
+    </div>
+  </footer>
+  <script src="../shared/form.js"></script>
+  <script>
+    // Переключение вкладок меню
+    const tabs = document.querySelectorAll(".tab");
+    tabs.forEach((tab) => tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+      document.querySelectorAll("[data-panel]").forEach((panel) => {
+        panel.hidden = panel.dataset.panel !== tab.dataset.tab;
+      });
+    }));
+  </script>
+</body>
+</html>

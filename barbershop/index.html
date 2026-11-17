@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Барбершоп «Бритва» — мужские стрижки в центре города</title>
+  <meta name="description" content="Мужские стрижки, бритьё и оформление бороды. Запись онлайн, мастера с опытом от 5 лет.">
+  <meta property="og:title" content="Барбершоп «Бритва»">
+  <meta property="og:description" content="Мужские стрижки и бритьё. Запись онлайн.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/base.css">
+  <style>
+    :root {
+      --bg: #111111; --header-bg: #111111ee; --card: #1b1b1b; --text: #f5f1e8; --muted: #a8a196;
+      --line: #2e2b27; --accent: #c9a24b; --on-accent: #111; --radius: 4px;
+      --font-head: "Oswald", sans-serif; --font-body: "Inter", sans-serif;
+    }
+    .hero { min-height: 82vh; display: grid; align-items: center; position: relative; overflow: hidden;
+      background: radial-gradient(circle at 80% 30%, #3a2f1a 0, transparent 45%), linear-gradient(135deg, #151515, #0b0b0b); }
+    .hero::after { content: "BRITVA"; position: absolute; right: -20px; bottom: -40px; font: 700 220px/1 "Oswald"; color: #ffffff06; letter-spacing: 8px; }
+    .hero h1 { font-size: clamp(42px, 7vw, 84px); text-transform: uppercase; letter-spacing: 2px; }
+    .hero h1 span { color: var(--accent); }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
+    .stats { display: flex; gap: 40px; margin-top: 48px; flex-wrap: wrap; }
+    .stats b { display: block; font: 700 36px "Oswald"; color: var(--accent); }
+    .service { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 20px 0; border-bottom: 1px dashed var(--line); }
+    .service h3 { font-size: 22px; margin: 0; text-transform: uppercase; }
+    .service p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+    .masters .card { text-align: center; }
+    .avatar { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 16px; display: grid; place-items: center;
+      font: 700 34px "Oswald"; color: var(--on-accent); background: linear-gradient(135deg, var(--accent), #8a6a26); }
+    .book { background: linear-gradient(135deg, #1b1b1b, #241e12); }
+    .book .container { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    @media (max-width: 760px) { .book .container { grid-template-columns: 1fr; } .hero::after { font-size: 120px; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="#top">БРИТВА</a>
+      <button class="menu-toggle" data-menu-toggle aria-controls="nav" aria-expanded="false">Меню</button>
+      <nav class="nav" id="nav">
+        <a href="#services">Услуги</a>
+        <a href="#masters">Мастера</a>
+        <a href="#book">Запись</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="muted">Барбершоп в центре города · с 2019 года</p>
+        <h1>Стрижка, после которой<br><span>хочется выйти в люди</span></h1>
+        <p class="lead">Мужские стрижки, королевское бритьё и уход за бородой. Без очередей — по записи на удобное время.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#book">Записаться</a>
+          <a class="btn btn-ghost" href="#services">Цены</a>
+        </div>
+        <div class="stats">
+          <div><b>5+ лет</b>опыт мастеров</div>
+          <div><b>4.9</b>средняя оценка</div>
+          <div><b>45 мин</b>средняя стрижка</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2>Услуги и цены</h2>
+        <div class="service"><div><h3>Мужская стрижка</h3><p>Консультация, мытьё головы, укладка</p></div><span class="price">1 400 ₽</span></div>
+        <div class="service"><div><h3>Стрижка + борода</h3><p>Комплекс: стрижка и моделирование бороды</p></div><span class="price">2 100 ₽</span></div>
+        <div class="service"><div><h3>Королевское бритьё</h3><p>Горячее полотенце, опасная бритва, уход</p></div><span class="price">1 600 ₽</span></div>
+        <div class="service"><div><h3>Детская стрижка</h3><p>Для мальчиков до 12 лет</p></div><span class="price">900 ₽</span></div>
+      </div>
+    </section>
+
+    <section id="masters" class="masters">
+      <div class="container">
+        <h2>Мастера</h2>
+        <div class="grid">
+          <div class="card"><div class="avatar">АК</div><h3>Артём</h3><p class="muted">Классика и фейды · 7 лет опыта</p></div>
+          <div class="card"><div class="avatar">ДМ</div><h3>Денис</h3><p class="muted">Бороды и бритьё · 5 лет опыта</p></div>
+          <div class="card"><div class="avatar">ИС</div><h3>Илья</h3><p class="muted">Креативные стрижки · 6 лет опыта</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="book">
+      <div class="container">
+        <div>
+          <h2>Запишитесь на удобное время</h2>
+          <p class="lead">Оставьте имя и телефон — администратор перезвонит в течение 15 минут и подберёт мастера.</p>
+        </div>
+        <form class="form" data-demo-form novalidate>
+          <input name="name" placeholder="Ваше имя" autocomplete="name">
+          <input name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel">
+          <select name="service" aria-label="Услуга">
+            <option>Мужская стрижка</option><option>Стрижка + борода</option><option>Королевское бритьё</option>
+          </select>
+          <button class="btn" type="submit">Записаться</button>
+          <p class="form-status" data-form-status role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="container grid">
+        <div><h3>Адрес</h3><p class="muted">ул. Примерная, 12<br>5 минут от метро</p></div>
+        <div><h3>Часы работы</h3><p class="muted">Ежедневно с 10:00 до 22:00</p></div>
+        <div><h3>Связаться</h3><p class="muted">Телефон и Telegram появятся здесь<br>на сайте заказчика</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© Барбершоп «Бритва»</span>
+      <span class="demo-note">Учебный пример. Заведение вымышленное, сайт сделан для портфолио.</span>
+    </div>
+  </footer>
+  <script src="../shared/form.js"></script>
+</body>
+</html>

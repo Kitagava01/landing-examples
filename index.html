@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Примеры лендингов — портфолио</title>
+  <meta name="description" content="Пять учебных лендингов: барбершоп, кофейня, репетитор, фитнес-тренер, цветочный магазин.">
+  <link rel="stylesheet" href="shared/base.css">
+  <style>
+    :root { --bg: #f6f7f9; --card: #fff; --text: #111827; --muted: #6b7280; --line: #e5e7eb; --accent: #111827; --on-accent: #fff; --radius: 16px; }
+    .item { display: block; text-decoration: none; overflow: hidden; padding: 0; }
+    .item img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); }
+    .item div { padding: 18px 22px; }
+    .item h3 { margin: 0 0 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <div class="container">
+        <h1>Примеры лендингов</h1>
+        <p class="lead">Пять учебных одностраничных сайтов на HTML и CSS: адаптивная вёрстка, форма заявки, базовая SEO-разметка. Все заведения вымышленные.</p>
+        <div class="grid" style="margin-top:32px">
+          <a class="card item" href="barbershop/"><img src="screenshots/barbershop.png" alt="Барбершоп «Бритва»"><div><h3>Барбершоп «Бритва»</h3><p class="muted">Тёмная тема, прайс, мастера, запись</p></div></a>
+          <a class="card item" href="coffee/"><img src="screenshots/coffee.png" alt="Кофейня «Зерно»"><div><h3>Кофейня «Зерно»</h3><p class="muted">Меню с вкладками, заказ навынос</p></div></a>
+          <a class="card item" href="tutor/"><img src="screenshots/tutor.png" alt="Репетитор английского"><div><h3>Репетитор английского</h3><p class="muted">Программы, этапы, отзывы, пробный урок</p></div></a>
+          <a class="card item" href="fitness/"><img src="screenshots/fitness.png" alt="Персональный тренер"><div><h3>Персональный тренер</h3><p class="muted">Тарифы и калькулятор стоимости курса</p></div></a>
+          <a class="card item" href="flowers/"><img src="screenshots/flowers.png" alt="Цветочная мастерская «Пион»"><div><h3>Цветочная мастерская</h3><p class="muted">Каталог букетов и оформление доставки</p></div></a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

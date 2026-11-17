@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Персональный тренер Кирилл — тренировки в зале и онлайн</title>
+  <meta name="description" content="Персональные тренировки и план питания. Похудение, набор мышечной массы, восстановление после травм.">
+  <meta property="og:title" content="Персональный тренер Кирилл">
+  <meta property="og:description" content="Тренировки в зале и онлайн, план питания.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/base.css">
+  <style>
+    :root {
+      --bg: #0d0f0c; --header-bg: #0d0f0cee; --card: #161a14; --text: #f2f5ee; --muted: #9aa393;
+      --line: #262c22; --accent: #b6f23a; --on-accent: #0d0f0c; --radius: 12px;
+      --font-head: "Montserrat", sans-serif; --font-body: "Montserrat", sans-serif;
+    }
+    h1, h2 { font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
+    .hero { min-height: 80vh; display: grid; align-items: center; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; width: 520px; height: 520px; right: -120px; top: -60px; border-radius: 50%;
+      background: radial-gradient(circle, #b6f23a33, transparent 65%); }
+    .hero h1 { font-size: clamp(40px, 7vw, 88px); max-width: 900px; }
+    .hero h1 span { color: var(--accent); }
+    .hero .btn { margin-top: 24px; }
+    .marquee { border-block: 1px solid var(--line); overflow: hidden; white-space: nowrap; padding: 18px 0; font: 900 22px "Montserrat"; text-transform: uppercase; color: var(--muted); }
+    .marquee span { display: inline-block; animation: run 18s linear infinite; }
+    @keyframes run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .plans .card { display: flex; flex-direction: column; gap: 8px; }
+    .plans .card.featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+    .plans .card .btn { margin-top: auto; text-align: center; }
+    .plans ul { padding-left: 18px; color: var(--muted); margin: 8px 0 20px; }
+    .result-bar { height: 10px; border-radius: 99px; background: var(--line); overflow: hidden; margin-top: 10px; }
+    .result-bar i { display: block; height: 100%; background: var(--accent); }
+    .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .calc label { display: block; font-weight: 700; margin-bottom: 6px; }
+    .calc input[type=range] { width: 100%; accent-color: var(--accent); }
+    .calc-result { font: 900 48px "Montserrat"; color: var(--accent); }
+    @media (max-width: 760px) { .calc { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="#top">KIRILL<span style="color:var(--accent)">.FIT</span></a>
+      <button class="menu-toggle" data-menu-toggle aria-controls="nav" aria-expanded="false">Меню</button>
+      <nav class="nav" id="nav">
+        <a href="#plans">Тарифы</a>
+        <a href="#results">Результаты</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="#start">Начать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="muted">Персональный тренер · 8 лет практики</p>
+        <h1>Тело, которое <span>работает</span> на вас</h1>
+        <p class="lead">Тренировки в зале и онлайн, план питания без жёстких диет и поддержка в Telegram между занятиями.</p>
+        <a class="btn" href="#start">Бесплатная консультация</a>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><span>Похудение · Набор массы · Осанка · Выносливость · Восстановление · Похудение · Набор массы · Осанка · Выносливость · Восстановление · </span></div>
+
+    <section id="plans" class="plans">
+      <div class="container">
+        <h2>Тарифы</h2>
+        <div class="grid">
+          <div class="card"><h3>Онлайн</h3><span class="price">6 000 ₽ / мес</span>
+            <ul><li>План тренировок на месяц</li><li>Проверка техники по видео</li><li>Связь в Telegram</li></ul><a class="btn btn-ghost" href="#start">Выбрать</a></div>
+          <div class="card featured"><h3>В зале</h3><span class="price">2 000 ₽ / тренировка</span>
+            <ul><li>Персональная тренировка 60 минут</li><li>Контроль техники и нагрузки</li><li>План питания</li></ul><a class="btn" href="#start">Выбрать</a></div>
+          <div class="card"><h3>Абонемент 12</h3><span class="price">21 600 ₽</span>
+            <ul><li>12 тренировок в зале</li><li>Скидка 10%</li><li>Замеры каждые 2 недели</li></ul><a class="btn btn-ghost" href="#start">Выбрать</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <h2>Средний результат за 3 месяца</h2>
+        <div class="grid">
+          <div class="card"><b>Снижение веса</b><p class="muted">−6…9 кг при работе на похудение</p><div class="result-bar"><i style="width:75%"></i></div></div>
+          <div class="card"><b>Сила</b><p class="muted">+30% к рабочим весам в базовых упражнениях</p><div class="result-bar"><i style="width:60%"></i></div></div>
+          <div class="card"><b>Выносливость</b><p class="muted">в 2 раза дольше без одышки</p><div class="result-bar"><i style="width:85%"></i></div></div>
+        </div>
+        <p class="muted demo-note">Цифры в этом примере условные и показывают только вёрстку.</p>
+      </div>
+    </section>
+
+    <section id="calc">
+      <div class="container calc">
+        <div>
+          <h2>Сколько стоит курс</h2>
+          <p class="lead">Выберите число тренировок в неделю и срок — калькулятор посчитает стоимость с учётом скидки.</p>
+        </div>
+        <div class="card">
+          <label for="perWeek">Тренировок в неделю: <span id="perWeekOut">2</span></label>
+          <input id="perWeek" type="range" min="1" max="5" value="2">
+          <label for="weeks" style="margin-top:16px">Недель: <span id="weeksOut">8</span></label>
+          <input id="weeks" type="range" min="4" max="24" step="4" value="8">
+          <p class="muted" style="margin:20px 0 0">Итого</p>
+          <div class="calc-result" id="total">28 800 ₽</div>
+          <p class="muted" id="discount" style="margin:0"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="start">
+      <div class="container calc">
+        <div>
+          <h2>Бесплатная консультация</h2>
+          <p class="lead">Обсудим цели, ограничения по здоровью и подберём формат занятий. 20 минут по телефону или в Telegram.</p>
+        </div>
+        <form class="form" data-demo-form novalidate>
+          <input name="name" placeholder="Ваше имя" autocomplete="name">
+          <input name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel">
+          <select name="goal" aria-label="Цель"><option>Похудение</option><option>Набор массы</option><option>Здоровая спина</option></select>
+          <button class="btn" type="submit">Записаться</button>
+          <p class="form-status" data-form-status role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© KIRILL.FIT</span>
+      <span class="demo-note">Учебный пример. Тренер вымышленный, сайт сделан для портфолио.</span>
+    </div>
+  </footer>
+  <script src="../shared/form.js"></script>
+  <script>
+    // Калькулятор стоимости: 2000 ₽ за тренировку, скидка за длинный курс
+    const perWeek = document.getElementById("perWeek");
+    const weeks = document.getElementById("weeks");
+    const fmt = (n) => n.toLocaleString("ru-RU") + " ₽";
+    function update() {
+      const sessions = Number(perWeek.value) * Number(weeks.value);
+      const discount = weeks.value >= 16 ? 0.15 : weeks.value >= 8 ? 0.1 : 0;
+      const total = Math.round(sessions * 2000 * (1 - discount));
+      document.getElementById("perWeekOut").textContent = perWeek.value;
+      document.getElementById("weeksOut").textContent = weeks.value;
+      document.getElementById("total").textContent = fmt(total);
+      document.getElementById("discount").textContent =
+        `${sessions} тренировок` + (discount ? ` · скидка ${discount * 100}%` : "");
+    }
+    perWeek.addEventListener("input", update);
+    weeks.addEventListener("input", update);
+    update();
+  </script>
+</body>
+</html>

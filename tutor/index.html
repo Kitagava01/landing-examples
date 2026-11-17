@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Английский онлайн с Мариной — уроки для школьников и взрослых</title>
+  <meta name="description" content="Индивидуальные уроки английского онлайн: подготовка к ОГЭ и ЕГЭ, разговорный английский. Первый урок бесплатно.">
+  <meta property="og:title" content="Английский онлайн с Мариной">
+  <meta property="og:description" content="Подготовка к ОГЭ и ЕГЭ, разговорный английский. Первый урок бесплатно.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/base.css">
+  <style>
+    :root {
+      --bg: #f6f8ff; --header-bg: #f6f8ffee; --card: #ffffff; --text: #1d2342; --muted: #5f6787;
+      --line: #e1e6f7; --accent: #4f46e5; --on-accent: #fff; --radius: 20px;
+      --font-head: "Nunito", sans-serif; --font-body: "Nunito", sans-serif;
+    }
+    h1, h2, h3 { font-weight: 800; }
+    .hero .container { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(36px, 5.5vw, 64px); }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .badge { display: inline-block; padding: 6px 14px; border-radius: 999px; background: #e7e5ff; color: var(--accent); font-weight: 700; font-size: 14px; }
+    .bubble-stack { display: grid; gap: 14px; }
+    .bubble { background: var(--card); border: 1px solid var(--line); border-radius: 20px 20px 20px 4px; padding: 16px 20px; box-shadow: 0 10px 30px #4f46e512; font-weight: 600; }
+    .bubble:nth-child(2) { justify-self: end; border-radius: 20px 20px 4px 20px; background: var(--accent); color: #fff; }
+    .program .card h3 { color: var(--accent); }
+    .program .card ul { padding-left: 18px; margin: 12px 0 0; color: var(--muted); }
+    .steps { counter-reset: step; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .step { counter-increment: step; position: relative; padding-top: 56px; }
+    .step::before { content: counter(step); position: absolute; top: 0; left: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 800; }
+    .review { font-size: 17px; }
+    .review b { display: block; margin-top: 12px; font-size: 15px; }
+    .cta { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; border-radius: 32px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .cta .lead { color: #e7e5ff; }
+    .cta .btn { background: #fff; color: var(--accent); }
+    .cta .form input, .cta .form select { border: 0; }
+    .cta .form-status[data-state="ok"] { color: #bbf7d0; }
+    .cta .form-status[data-state="error"] { color: #fecaca; }
+    @media (max-width: 760px) { .hero .container, .cta { grid-template-columns: 1fr; } .cta { padding: 28px; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="#top">Marina English</a>
+      <button class="menu-toggle" data-menu-toggle aria-controls="nav" aria-expanded="false">Меню</button>
+      <nav class="nav" id="nav">
+        <a href="#program">Программы</a>
+        <a href="#how">Как проходят уроки</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#trial">Пробный урок</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="badge">Первый урок бесплатно</span>
+          <h1>Английский, на котором <em>не страшно говорить</em></h1>
+          <p class="lead">Индивидуальные уроки онлайн для школьников и взрослых. Готовлю к ОГЭ и ЕГЭ, помогаю заговорить без зубрёжки.</p>
+          <a class="btn" href="#trial">Записаться на пробный урок</a>
+        </div>
+        <div class="bubble-stack" aria-hidden="true">
+          <div class="bubble">How was your weekend?</div>
+          <div class="bubble">It was great! I went hiking.</div>
+          <div class="bubble">Perfect, Past Simple is correct!</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="program" class="program">
+      <div class="container">
+        <h2>Программы</h2>
+        <div class="grid">
+          <div class="card"><h3>ОГЭ и ЕГЭ</h3><p class="price">1 500 ₽ <small class="muted">/ 60 мин</small></p>
+            <ul><li>Разбор всех заданий экзамена</li><li>Пробные варианты каждый месяц</li><li>Проверка эссе и писем</li></ul></div>
+          <div class="card"><h3>Разговорный</h3><p class="price">1 300 ₽ <small class="muted">/ 60 мин</small></p>
+            <ul><li>Темы под ваши интересы</li><li>Исправление ошибок без стресса</li><li>Словарь из каждого урока</li></ul></div>
+          <div class="card"><h3>Для школьников</h3><p class="price">1 200 ₽ <small class="muted">/ 45 мин</small></p>
+            <ul><li>Помощь со школьной программой</li><li>Игровой формат для 7–12 лет</li><li>Отчёт родителям раз в месяц</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <h2>Как проходят уроки</h2>
+        <div class="steps">
+          <div class="step"><h3>Пробный урок</h3><p class="muted">Знакомимся, определяю уровень и цели.</p></div>
+          <div class="step"><h3>План занятий</h3><p class="muted">Составляю программу под вашу задачу и сроки.</p></div>
+          <div class="step"><h3>Уроки онлайн</h3><p class="muted">Zoom или Telegram, материалы на интерактивной доске.</p></div>
+          <div class="step"><h3>Результат</h3><p class="muted">Каждый месяц — мини-тест и разбор прогресса.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <h2>Отзывы учеников</h2>
+        <div class="grid">
+          <div class="card review">«Боялась говорить даже „hello“. Через три месяца спокойно общалась в поездке.»<b>Ольга, 34 года</b></div>
+          <div class="card review">«Сын сдал ОГЭ на пятёрку, хотя в начале года еле вытягивал тройку.»<b>Сергей, папа ученика</b></div>
+          <div class="card review">«Уроки пролетают незаметно, каждый раз узнаю что-то полезное для работы.»<b>Максим, 27 лет</b></div>
+        </div>
+        <p class="muted demo-note">Отзывы в этом примере придуманы для демонстрации вёрстки.</p>
+      </div>
+    </section>
+
+    <section id="trial">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Запишитесь на бесплатный пробный урок</h2>
+            <p class="lead">30 минут: определим уровень, обсудим цели и составим план занятий.</p>
+          </div>
+          <form class="form" data-demo-form novalidate>
+            <input name="name" placeholder="Ваше имя" autocomplete="name">
+            <input name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel">
+            <select name="program" aria-label="Программа"><option>ОГЭ и ЕГЭ</option><option>Разговорный</option><option>Для школьников</option></select>
+            <button class="btn" type="submit">Записаться</button>
+            <p class="form-status" data-form-status role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© Marina English</span>
+      <span class="demo-note">Учебный пример. Преподаватель вымышленный, сайт сделан для портфолио.</span>
+    </div>
+  </footer>
+  <script src="../shared/form.js"></script>
+</body>
+</html>

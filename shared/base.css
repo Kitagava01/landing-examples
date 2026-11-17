@@ -1,0 +1,67 @@
+/* Общая основа для всех демо-лендингов. Цвета и шрифты задаёт каждая страница. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body, "Segoe UI", Roboto, Arial, sans-serif);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.container { width: min(1120px, 100% - 32px); margin-inline: auto; }
+section { padding: 80px 0; }
+h1, h2, h3 { font-family: var(--font-head, inherit); line-height: 1.15; margin: 0 0 16px; }
+h2 { font-size: clamp(28px, 4vw, 40px); }
+.lead { font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 620px; }
+
+/* Шапка */
+.header { position: sticky; top: 0; z-index: 10; background: var(--header-bg, var(--bg)); border-bottom: 1px solid var(--line); }
+.header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.logo { font-family: var(--font-head, inherit); font-weight: 800; font-size: 22px; text-decoration: none; }
+.nav { display: flex; gap: 24px; align-items: center; }
+.nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
+.nav a:hover { color: var(--text); }
+.menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; color: var(--text); font: inherit; cursor: pointer; }
+
+/* Кнопки */
+.btn {
+  display: inline-block; padding: 14px 28px; border-radius: var(--radius, 10px);
+  background: var(--accent); color: var(--on-accent); font-weight: 700;
+  text-decoration: none; border: 0; cursor: pointer; font: inherit; font-weight: 700;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.btn-ghost { background: transparent; color: var(--text); border: 2px solid var(--line); }
+
+/* Сетки и карточки */
+.grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius, 14px); padding: 28px; }
+.price { font-size: 26px; font-weight: 800; color: var(--accent-text, var(--accent)); }
+.muted { color: var(--muted); }
+
+/* Форма */
+.form { display: grid; gap: 14px; max-width: 460px; }
+.form input, .form select {
+  font: inherit; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--card); color: var(--text);
+}
+.form-status { min-height: 24px; margin: 0; font-weight: 600; }
+.form-status[data-state="ok"] { color: #16a34a; }
+.form-status[data-state="error"] { color: #dc2626; }
+
+.footer { padding: 32px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.demo-note { font-size: 13px; }
+
+@media (max-width: 760px) {
+  section { padding: 56px 0; }
+  .menu-toggle { display: inline-block; }
+  .nav {
+    position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; align-items: stretch;
+    gap: 0; background: var(--header-bg, var(--bg)); border-bottom: 1px solid var(--line); display: none;
+  }
+  .nav.is-open { display: flex; }
+  .nav a { padding: 14px 16px; border-top: 1px solid var(--line); }
+}
